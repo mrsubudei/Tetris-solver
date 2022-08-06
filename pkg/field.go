@@ -29,3 +29,38 @@ func Printans(slice [][]string) {
 		fmt.Println()
 	}
 }
+
+func removeMinos(field [][]string, s Shape) [][]string {
+	for i := 0; i < len(field); i++ {
+		for j := 0; j < len(field[i]); j++ {
+			if s.x1 == i && s.y1 == j {
+				field[i][j] = "."
+			}
+		}
+	}
+
+	for i := 0; i < len(field); i++ {
+		for j := 0; j < len(field[i]); j++ {
+			if s.x2 == i && s.y2 == j {
+				field[i][j] = "."
+			}
+		}
+	}
+
+	for i := 0; i < len(field); i++ {
+		for j := 0; j < len(field[i]); j++ {
+			if s.x3 == i && s.y3 == j {
+				field[i][j] = "."
+			}
+		}
+	}
+
+	for i := 0; i < len(field); i++ {
+		for j := 0; j < len(field[i]); j++ {
+			if s.x4 == i && s.y4 == j {
+				field[i][j] = "."
+			}
+		}
+	}
+	return field
+}
